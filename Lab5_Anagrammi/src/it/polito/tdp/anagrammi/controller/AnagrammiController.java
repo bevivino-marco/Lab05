@@ -30,7 +30,12 @@ public class AnagrammiController {
 
     @FXML
     void doCalcolaAnagrammi(ActionEvent event) {
-
+      String parola = txtAnagrammi.getText();
+      if (parola =="" || parola ==null) {
+    	  txtAnagrammiCorretti.appendText("inserire una parola");
+      }
+      
+      
     }
 
     @FXML
