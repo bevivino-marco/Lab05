@@ -11,7 +11,11 @@ public class Model {
 	private Map <Parola, Boolean> mappaP= new TreeMap <Parola, Boolean>();
 	List <Parola> parole = new LinkedList <Parola>();
     ParolaDAO dao = new ParolaDAO();
-	public Map <Parola, Boolean> controllaAnagrammi(List <Parola> listaP){
+	
+    
+    
+    
+public Map <Parola, Boolean> controllaAnagrammi(List <Parola> listaP){
 		for (Parola p : listaP) {
 			mappaP.put(p, dao.getParola(p) );
 			parole.add(p);
@@ -40,5 +44,9 @@ public String stampaNonCorrette() {
 		}
 	}
 	return null;
+}
+
+public void getParolaCorretta(Parola p) {
+	System.out.println(dao.getParoleCorrette(p));
 }
 }

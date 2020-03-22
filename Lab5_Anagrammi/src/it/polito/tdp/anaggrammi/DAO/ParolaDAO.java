@@ -36,4 +36,26 @@ public class ParolaDAO {
 		
 	
 	}
+	public String getParoleCorrette(Parola p ) {
+		final String sql = "SELECT * FROM parola WHERE nome=?";
+		try {
+			Connection conn = ConnectDB.getConnection();
+			PreparedStatement st = conn.prepareStatement(String.format(sql));
+            st.setString(1, p.getNome());
+			ResultSet rs = st.executeQuery();
+
+			if (rs.next()) {
+				conn.close();
+				return rs.getString("nome");
+			}
+
+			conn.close();
+			return null;
+
+		} catch (SQLException e) {
+			// e.printStackTrace();
+			throw new RuntimeException("Errore Db", e);
+		}
+		
+	}
 }

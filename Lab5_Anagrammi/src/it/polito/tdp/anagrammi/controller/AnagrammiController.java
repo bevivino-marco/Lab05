@@ -34,7 +34,8 @@ public class AnagrammiController {
       if (parola =="" || parola ==null) {
     	  txtAnagrammiCorretti.appendText("inserire una parola");
       }
-      
+     // model.controllaAnagrammi(parola);
+    //  txtAnagrammiCorretti.appendText();
       
     }
 
