@@ -3,8 +3,13 @@ package it.polito.tdp.anagrammi.model;
 public class Parola {
 private int id;
 private String nome;
+
+public Parola(String nome) {
+	
+	this.nome = nome;
+}
 public Parola(int id, String nome) {
-	super();
+	
 	this.id = id;
 	this.nome = nome;
 }
