@@ -8,25 +8,79 @@ import it.polito.tdp.anaggrammi.DAO.ParolaDAO;
 import java.util.*;
 
 public class Model {
-	private Map <Parola, Boolean> mappaP= new TreeMap <Parola, Boolean>();
+	private Map <Parola, Boolean> mappaP= new HashMap <Parola, Boolean>();
 	List <Parola> parole = new LinkedList <Parola>();
     ParolaDAO dao = new ParolaDAO();
-	
+	Espandi e = new Espandi();
+    
+ public boolean isCorrect (Parola anagramma) {
+	 return dao.isCorrect(anagramma);
+ }
+ 
+ public List <String> calcolaAnagrammi(Parola anagramma){
+	 List <String > anagrammi = new LinkedList<String>();
+	 String parziale ="";
+	 e.calcola(parziale, anagramma , 0 , anagrammi);
+	 return anagrammi;
+		
+	 }
+ 
     
     
     
-public Map <Parola, Boolean> controllaAnagrammi(List <Parola> listaP){
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+/*public Map <Parola, Boolean> controllaAnagrammi(List <Parola> listaP){
 		for (Parola p : listaP) {
-			mappaP.put(p, dao.getParola(p) );
-			parole.add(p);
+			if (dao.getParola(p)==true) {
+				mappaP.put(p, true);
+			}else mappaP.put(p, false);
 		}
 		return mappaP;
 	}
 
+public Map <Parola, Boolean> mappa(){
+	return mappaP;
+}
 public String stampaCorrette() {
 	for (Parola p : parole) {
 		if (mappaP.containsKey(p)) {
-			if (mappaP.get(p)==true)
+			if (mappaP.get(p).equals(true))
 			{
 				return mappaP.get(p).toString();
 			}
@@ -48,5 +102,5 @@ public String stampaNonCorrette() {
 
 public void getParolaCorretta(Parola p) {
 	System.out.println(dao.getParoleCorrette(p));
-}
+}*/
 }
